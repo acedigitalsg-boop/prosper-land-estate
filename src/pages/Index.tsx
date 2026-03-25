@@ -1,16 +1,34 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState } from "react";
+import Navbar from "@/components/Navbar";
+import HeroSection from "@/components/HeroSection";
+import FoundationSection from "@/components/FoundationSection";
+import ApproachSection from "@/components/ApproachSection";
+import LocationsSection from "@/components/LocationsSection";
+import PhilosophySection from "@/components/PhilosophySection";
+import ProcessSection from "@/components/ProcessSection";
+import WhoWeServeSection from "@/components/WhoWeServeSection";
+import TestimonialSection from "@/components/TestimonialSection";
+import CTASection from "@/components/CTASection";
+import Footer from "@/components/Footer";
+import ContactModal from "@/components/ContactModal";
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
+export default function Index() {
+  const [contactOpen, setContactOpen] = useState(false);
+
   return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
-    </div>
+    <>
+      <Navbar onOpenContact={() => setContactOpen(true)} />
+      <HeroSection onOpenContact={() => setContactOpen(true)} />
+      <FoundationSection />
+      <ApproachSection />
+      <LocationsSection />
+      <PhilosophySection />
+      <ProcessSection />
+      <WhoWeServeSection />
+      <TestimonialSection />
+      <CTASection onOpenContact={() => setContactOpen(true)} />
+      <Footer />
+      <ContactModal open={contactOpen} onClose={() => setContactOpen(false)} />
+    </>
   );
-};
-
-const Index = PlaceholderIndex;
-
-export default Index;
+}
