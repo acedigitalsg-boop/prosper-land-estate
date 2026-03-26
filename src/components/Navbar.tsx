@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { Menu, X, Leaf } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 interface NavbarProps {
   onOpenContact: () => void;
@@ -37,10 +38,16 @@ export default function Navbar({ onOpenContact }: NavbarProps) {
             : "bg-transparent"
         }`}
       >
-        <div className="container mx-auto flex items-center justify-between py-4 px-6">
-          <a href="#" className="flex items-center gap-2 text-cream font-heading text-xl font-semibold tracking-wide">
-            <Leaf className="w-5 h-5 text-gold" />
-            Prosper Land
+        <div className="container mx-auto flex items-center justify-between py-3 px-6">
+          <a href="#" className="flex items-center gap-2">
+            <img
+              src={logo}
+              alt="Prosper Land Indonesia"
+              className="h-10 lg:h-14 w-auto"
+            />
+            <span className="text-cream font-heading text-xl font-semibold tracking-wide">
+              Prosper Land
+            </span>
           </a>
 
           <div className="hidden lg:flex items-center gap-8">

@@ -1,4 +1,4 @@
-import { Leaf } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 export default function Footer() {
   const handleNav = (href: string) => {
@@ -10,9 +10,9 @@ export default function Footer() {
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           <div>
-            <div className="flex items-center gap-2 text-cream font-heading text-lg mb-3">
-              <Leaf className="w-5 h-5 text-gold" />
-              Prosper Land
+            <div className="flex items-center gap-2 mb-3">
+              <img src={logo} alt="Prosper Land Indonesia" className="h-10 w-auto" />
+              <span className="text-cream font-heading text-lg">Prosper Land</span>
             </div>
             <p className="text-cream/50 font-body text-sm leading-relaxed">
               Transparent Land Investment in Indonesia
@@ -42,7 +42,9 @@ export default function Footer() {
           <div>
             <h4 className="text-cream font-body text-sm font-semibold mb-4 tracking-wide uppercase">Contact</h4>
             <div className="flex flex-col gap-2 text-cream/50 font-body text-sm">
-              <span>info@prosperland.com</span>
+              <a href="mailto:info@prosperlandindonesia.com" className="hover:text-gold transition-colors">
+                info@prosperlandindonesia.com
+              </a>
               <span>WhatsApp: +62 xxx xxxx xxxx</span>
             </div>
             <div className="flex gap-4 mt-4 text-cream/40 font-body text-xs">
