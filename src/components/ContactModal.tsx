@@ -8,11 +8,17 @@ interface ContactModalProps {
 
 export default function ContactModal({ open, onClose }: ContactModalProps) {
   const [submitted, setSubmitted] = useState(false);
+  const [formData, setFormData] = useState({ name: "", email: "", budget: "", message: "" });
 
   if (!open) return null;
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    const subject = encodeURIComponent(`New Inquiry from ${formData.name} – Prosper Land Indonesia`);
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\nBudget: ${formData.budget}\nMessage: ${formData.message}`
+    );
+    window.open(`mailto:info@prosperlandindonesia.com?subject=${subject}&body=${body}`, "_self");
     setSubmitted(true);
   };
 
@@ -27,7 +33,7 @@ export default function ContactModal({ open, onClose }: ContactModalProps) {
         {submitted ? (
           <div className="text-center py-8">
             <h3 className="font-heading text-2xl mb-2 text-foreground">Thank You</h3>
-            <p className="text-muted-foreground font-body">We'll be in touch within 24 hours.</p>
+            <p className="text-muted-foreground font-body">Your inquiry has been prepared. We'll be in touch within 24 hours.</p>
           </div>
         ) : (
           <>
@@ -38,27 +44,37 @@ export default function ContactModal({ open, onClose }: ContactModalProps) {
                 required
                 type="text"
                 placeholder="Full Name"
+                maxLength={100}
+                value={formData.name}
+                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 className="border border-border rounded px-4 py-3 text-sm font-body bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-gold"
               />
               <input
                 required
                 type="email"
                 placeholder="Email Address"
+                maxLength={255}
+                value={formData.email}
+                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 className="border border-border rounded px-4 py-3 text-sm font-body bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-gold"
               />
               <select
                 required
+                value={formData.budget}
+                onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
                 className="border border-border rounded px-4 py-3 text-sm font-body bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-gold"
-                defaultValue=""
               >
                 <option value="" disabled>Investment Budget</option>
-                <option>$50k – $200k</option>
-                <option>$200k – $500k</option>
-                <option>$500k+</option>
+                <option>$10,000 – $50,000</option>
+                <option>$50,000 – $100,000</option>
+                <option>More than $100,000</option>
               </select>
               <textarea
                 placeholder="Tell us about your goals…"
                 rows={3}
+                maxLength={1000}
+                value={formData.message}
+                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 className="border border-border rounded px-4 py-3 text-sm font-body bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-gold resize-none"
               />
               <button

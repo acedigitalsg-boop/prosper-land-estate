@@ -25,13 +25,12 @@ export default function HeroSection({ onOpenContact }: HeroSectionProps) {
           Prosper Land offers mid to high-net-worth investors a clear path to acquiring valuable land with verified ownership and significant long-term potential.
         </p>
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-up-delay-2">
-          <a
-            href="#locations"
-            onClick={(e) => { e.preventDefault(); document.querySelector("#locations")?.scrollIntoView({ behavior: "smooth" }); }}
+          <button
+            onClick={onOpenContact}
             className="bg-gold hover:bg-gold-dark text-charcoal font-semibold px-8 py-3.5 rounded text-sm transition-colors"
           >
             Explore Opportunities
-          </a>
+          </button>
           <button
             onClick={onOpenContact}
             className="border border-cream/60 text-cream hover:bg-cream/10 font-semibold px-8 py-3.5 rounded text-sm transition-colors"
