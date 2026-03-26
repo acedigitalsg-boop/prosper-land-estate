@@ -63,7 +63,7 @@ export default function LocationsSection() {
                     </span>
                   ))}
                 </div>
-                <span className="text-gold font-semibold text-sm">{loc.cta}</span>
+                
               </div>
             </div>
           ))}
