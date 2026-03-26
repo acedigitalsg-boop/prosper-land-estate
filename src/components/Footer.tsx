@@ -45,7 +45,7 @@ export default function Footer() {
               <a href="mailto:info@prosperlandindonesia.com" className="hover:text-gold transition-colors">
                 info@prosperlandindonesia.com
               </a>
-              <span>WhatsApp: +62 xxx xxxx xxxx</span>
+              
             </div>
             <div className="flex gap-4 mt-4 text-cream/40 font-body text-xs">
               <span className="hover:text-cream/60 cursor-pointer transition-colors">Privacy Policy</span>
