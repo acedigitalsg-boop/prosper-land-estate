@@ -4,7 +4,7 @@ import { Star } from "lucide-react";
 const testimonials = [
   {
     quote: "Prosper Land provided unparalleled transparency and expertise, helping us navigate the Indonesian market with absolute confidence.",
-    name: "Richard Harrington",
+    name: "David Lee Wei Ming",
     title: "Private Investor, Singapore",
   },
   {
@@ -19,7 +19,7 @@ const testimonials = [
   },
   {
     quote: "Prosper Land turned what seemed like a complex foreign investment into a straightforward, rewarding experience. Highly recommended.",
-    name: "Sophia Tan-Williams",
+    name: "Michelle Chan Yee Ling",
     title: "Family Office Director, Hong Kong",
   },
 ];
